@@ -15,7 +15,7 @@ git remote add origin <YOUR_REPOSITORY_URL>
 git push -u origin main
 ```
 
-Configure your Git author name and email if Git asks. The ZIP does not include local Git history. No remote was created and nothing was pushed automatically.
+Configure your Git author name and email if Git asks. The ZIP does not include local Git history. The canonical repository is [charlesc004/agentcore-ai](https://github.com/charlesc004/agentcore-ai); use the commands above when publishing your own copy to a different repository.
 
 ## Run and verify
 

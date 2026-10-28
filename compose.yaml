@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: agentcore
+      POSTGRES_USER: agentcore
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentcore"]
+      interval: 5s
+      retries: 15
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 15
+  migrate:
+    build: ./backend
+    environment: &backend_environment
+      DATABASE_URL: postgresql+psycopg://agentcore:${POSTGRES_PASSWORD}@postgres:5432/agentcore
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      REDIS_URL: redis://redis:6379/0
+      EXECUTION_MODE: celery
+      CORS_ORIGIN: http://localhost:3000
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-DemoPass123!}
+    command: ["alembic", "upgrade", "head"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  api:
+    build: ./backend
+    environment: *backend_environment
+    ports: ["8000:8000"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+  worker:
+    build: ./backend
+    environment: *backend_environment
+    command: ["celery", "-A", "app.workers.tasks.celery", "worker", "--loglevel=info", "--concurrency=2"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    depends_on: [api]
+volumes:
+  postgres_data:

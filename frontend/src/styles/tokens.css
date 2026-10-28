@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Geist;
+  src: url("/fonts/geist-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geist Mono;
+  src: url("/fonts/geist-mono-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --background: #060b18;
+  --sidebar: #090f20;
+  --surface: #0e172a;
+  --surface-elevated: #131f35;
+  --surface-hover: #192642;
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
+  --secondary: #2563eb;
+  --accent-cyan: #06b6d4;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: rgba(148, 163, 184, 0.13);
+  --bg: var(--background);
+  --panel: var(--surface);
+  --muted: var(--text-secondary);
+  --text: var(--text-primary);
+  --accent: var(--primary-light);
+  --green: #34d399;
+  --radius: 12px;
+  --shadow: 0 8px 32px #00000025;
+  --action: linear-gradient(110deg, #823cf0, #3568ff);
+  --font-sans: Geist, Inter, system-ui, sans-serif;
+}
+:root[data-appearance="contrast"] {
+  --background: #020611;
+  --surface: #101d32;
+  --text-secondary: #bdcce1;
+  --text-muted: #98aeca;
+  --border: #6985ac55;
+}

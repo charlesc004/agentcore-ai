@@ -1,0 +1,331 @@
+.run-drawer {
+  width: min(1080px, 94vw);
+  padding: 8px 28px 30px;
+  background: #081322;
+  border-color: #304e75;
+  animation: drawer-enter 0.2s ease-out;
+}
+.run-drawer h2 {
+  font-size: 23px;
+}
+.run-summary {
+  border-color: #263b57;
+  font-size: 12px;
+  gap: 16px;
+}
+.run-actions {
+  border: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+.inspection-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 24px;
+}
+.execution-timeline {
+  border-right: 1px solid #223851;
+  padding-right: 17px;
+}
+.timeline-bookend {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 11px;
+  color: #88a0bd;
+  padding: 14px 9px;
+}
+.timeline-bookend svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #6890c3;
+}
+.timeline-bookend small {
+  display: block;
+  font-size: 9px;
+  color: #547498;
+  margin-top: 4px;
+}
+.timeline-bookend.succeeded {
+  color: #65d9ac;
+}
+.timeline-bookend.failed {
+  color: #fb92ac;
+}
+.timeline-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 13px 10px;
+  background: #111e3044;
+  margin: 9px 0;
+}
+.timeline-node:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: 43px;
+  left: 23px;
+  height: 18px;
+  width: 1px;
+  background: #325275;
+}
+.timeline-node.selected {
+  background: #173b5f77;
+  border-color: #4f83c9;
+  box-shadow: inset 2px 0 #7d7fff;
+}
+.timeline-node:hover {
+  background: #1a304c66;
+}
+.timeline-node > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.timeline-node strong {
+  display: block;
+  font-size: 11px;
+  color: #ccdcf0;
+  font-weight: 500;
+}
+.timeline-node small {
+  font-size: 10px;
+  text-transform: capitalize;
+  display: block;
+  color: #6284ad;
+  margin-top: 3px;
+}
+.timeline-node em {
+  font-size: 9px;
+  color: #9cafd0;
+  font-style: normal;
+  white-space: nowrap;
+}
+.timeline-node-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #395780;
+  border-radius: 50%;
+  color: #a1b6d6;
+  background: #142c49;
+  flex-shrink: 0;
+}
+.timeline-node.succeeded .timeline-node-icon {
+  color: #7ae0b7;
+  background: #114737;
+  border-color: #258c6c;
+}
+.timeline-node.failed .timeline-node-icon {
+  color: #fda4af;
+  background: #54213b;
+  border-color: #9b3c65;
+}
+.timeline-node.waiting .timeline-node-icon {
+  color: #fbbf24;
+  background: #543b16;
+  border-color: #98722d;
+}
+.inspection-content {
+  min-width: 0;
+  background: #0c192a;
+  border: 1px solid #263f5f;
+  border-radius: 11px;
+  padding: 19px;
+}
+.inspection-heading {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.inspection-heading .eyebrow {
+  font-size: 8px;
+}
+.inspection-heading h3 {
+  font-size: 15px;
+  margin-top: 4px;
+}
+.inspection-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #2b3d59;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+.inspection-tabs button {
+  text-transform: capitalize;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: #7695bb;
+  font-size: 12px;
+}
+.inspection-tabs button[aria-selected="true"] {
+  background: #2d3d6766;
+  color: #c9dcff;
+  box-shadow: inset 0 -2px #8b6cff;
+}
+.json-viewer {
+  border: 1px solid #28405f;
+  border-radius: 9px;
+  background: #071322;
+  overflow: hidden;
+}
+.json-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 11px 13px;
+  border-bottom: 1px solid #263b55;
+  background: #112039;
+  font-size: 11px;
+  color: #9bb4d4;
+}
+.json-toolbar > span {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.json-toolbar small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #597aa3;
+}
+.json-toolbar button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 10px;
+  color: #97b6df;
+}
+.json-viewer pre {
+  font-family:
+    Geist Mono,
+    monospace;
+  font-size: 11px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #b1c8f7;
+  padding: 18px;
+  max-height: 440px;
+  overflow: auto;
+  margin: 0;
+}
+.inspection-reset {
+  margin-top: 20px;
+}
+.inspection-metadata {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 14px;
+  font-size: 11px;
+  padding: 7px;
+}
+.inspection-metadata dt {
+  color: #6d91bc;
+}
+.inspection-metadata dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #b0c7e8;
+}
+.structured-logs > div {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 13px 0;
+  border-bottom: 1px solid #1d3451;
+  font-size: 11px;
+}
+.structured-logs small {
+  color: #6383ac;
+  font-size: 10px;
+}
+.structured-logs .error {
+  width: 100%;
+  padding-top: 5px;
+}
+.audit-row {
+  border-color: #213550;
+  padding: 21px 25px;
+}
+.audit-row strong {
+  font-size: 13px;
+}
+.audit-row p {
+  font-size: 12px;
+  color: #7d99bc;
+}
+.audit-actor {
+  font-size: 11px;
+  color: #9ab2d1;
+}
+.audit-actor small {
+  font-size: 10px;
+  color: #54769e;
+}
+.settings-panel {
+  padding: 6px 25px 28px;
+}
+.settings-panel h3 {
+  font-size: 16px;
+}
+.settings-panel p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.settings-panel dl {
+  font-size: 12px;
+  gap: 18px;
+}
+.settings-panel dt {
+  color: #718fb4;
+}
+.settings-panel dd {
+  color: #bacfe9;
+}
+.provider-card h3 {
+  font-size: 14px;
+}
+.provider-card p {
+  font-size: 11px;
+  color: #52bda1;
+}
+.tool-list > span {
+  font-size: 11px;
+  border-color: #294d6d;
+  background: #15314733;
+  color: #96bad5;
+}
+.skeleton {
+  background: linear-gradient(100deg, #0e1b2d, #192c49, #0e1b2d);
+  background-size: 200% 100%;
+  border-color: #263954;
+}
+.empty h3 {
+  font-size: 17px;
+}
+.empty p {
+  font-size: 13px;
+}
+footer {
+  font-size: 10px;
+  color: #4f6a8c;
+  padding: 20px 32px;
+}
+.mono {
+  font-family:
+    Geist Mono,
+    monospace;
+}

@@ -1,0 +1,393 @@
+.builder-page {
+  height: calc(100svh - 72px);
+  min-height: 680px;
+  background: #050c17;
+}
+.builder-top {
+  background: linear-gradient(100deg, #111a2d, #0b1424);
+  border-color: #253650;
+  padding: 17px 24px;
+  min-height: 87px;
+  gap: 15px;
+}
+.workflow-name {
+  font-size: 17px;
+  color: #dce9ff;
+  width: 300px;
+}
+.builder-subtitle {
+  font-size: 11px;
+  color: #7590b5;
+  gap: 10px;
+}
+.builder-actions {
+  gap: 8px;
+}
+.builder-actions .btn {
+  font-size: 11px;
+  min-height: 35px;
+  padding: 8px 12px;
+}
+.builder-actions .btn:nth-last-child(2) {
+  background: var(--action);
+  color: white;
+  border-color: #a78bfa55;
+}
+.builder-actions .btn:last-child {
+  background: #162640;
+  color: #c1d8ff;
+  border-color: #415f92;
+}
+.builder-layout {
+  min-height: 0;
+  flex-wrap: nowrap;
+}
+.node-library {
+  width: 205px;
+  padding: 22px 14px;
+  background: #0b1423;
+  border-color: #22354e;
+  overflow-y: auto;
+}
+.library-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.library-heading h3 {
+  font-size: 15px;
+}
+.library-heading > span {
+  font-size: 10px;
+  color: #647e9e;
+}
+.node-library .filter-search {
+  min-width: 0;
+  width: 100%;
+  padding: 0 9px;
+  margin-bottom: 23px;
+  gap: 7px;
+}
+.node-library .filter-search input {
+  font-size: 10px;
+  padding: 9px 0;
+}
+.node-category h4 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #6381a6;
+  margin: 19px 0 10px;
+}
+.library-node {
+  border: 1px solid #2a3c59;
+  background: linear-gradient(120deg, #132238, #0e1b2d);
+  border-radius: 8px;
+  padding: 12px 9px;
+  gap: 9px;
+  margin-bottom: 9px;
+  transition:
+    border-color 0.18s,
+    transform 0.18s;
+}
+.library-node:hover {
+  transform: translateX(2px);
+  border-color: #6175b4;
+}
+.library-node > span {
+  height: 29px;
+  width: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--node-accent, #a78bfa) 18%, transparent);
+  color: var(--node-accent, #a78bfa);
+  border: 1px solid
+    color-mix(in srgb, var(--node-accent, #a78bfa) 40%, transparent);
+}
+.library-node strong {
+  font-size: 11px;
+  font-weight: 550;
+}
+.library-node small {
+  font-size: 9px;
+  color: #6d87a7;
+  margin-top: 3px;
+}
+.library-node > svg {
+  color: #7088a8;
+}
+.kind-trigger {
+  --node-accent: #34d399;
+}
+.kind-agent {
+  --node-accent: #a78bfa;
+}
+.kind-tool {
+  --node-accent: #60a5fa;
+}
+.kind-condition {
+  --node-accent: #fbbf24;
+}
+.kind-delay {
+  --node-accent: #fb7185;
+}
+.kind-approval {
+  --node-accent: #f472b6;
+}
+.kind-output {
+  --node-accent: #22d3ee;
+}
+.flow-canvas {
+  background:
+    radial-gradient(ellipse at 45% 40%, #162f5114, transparent 70%), #050e1a;
+  min-width: 0;
+  overflow: hidden;
+}
+.canvas-label {
+  top: 18px;
+  left: 22px;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: #759bc7;
+  gap: 9px;
+}
+.canvas-label > span:last-child {
+  font-size: 9px;
+  color: #4d709b;
+}
+.canvas-hint {
+  font-size: 9px;
+  color: #486a93;
+  bottom: 18px;
+  left: 65px;
+}
+.node-inspector {
+  width: 260px;
+  padding: 24px 20px;
+  background: #0b1424;
+  border-color: #253852;
+}
+.node-inspector .eyebrow {
+  font-size: 9px;
+  color: #738fb7;
+  line-height: 1.6;
+}
+.node-inspector h3 {
+  font-size: 16px;
+  color: #d4e2f6;
+  margin-bottom: 13px;
+}
+.node-inspector p,
+.inspector-form p {
+  font-size: 12px;
+  color: #7690b3;
+}
+.node-inspector label {
+  font-size: 11px;
+}
+.node-inspector input,
+.node-inspector select,
+.node-inspector textarea {
+  font-size: 12px;
+  background: #0b182b;
+  border-color: #293e5e;
+  padding: 10px;
+}
+.inspector-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.inspector-fields:disabled {
+  opacity: 0.8;
+}
+.core-node {
+  width: 214px;
+  padding: 0 15px 15px;
+  border-radius: 11px;
+  background: linear-gradient(120deg, #16203a, #101a2b);
+  border: 1px solid color-mix(in srgb, var(--node-accent) 62%, #23354d);
+  box-shadow: 0 4px 18px #0005;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.core-node.node-selected {
+  border-color: var(--node-accent);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--node-accent) 15%, transparent),
+    0 0 30px color-mix(in srgb, var(--node-accent) 12%, transparent);
+}
+.node-type {
+  padding: 11px 12px;
+  margin: 0 -15px 13px;
+  color: var(--node-accent) !important;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--node-accent) 20%, transparent);
+  background: color-mix(in srgb, var(--node-accent) 5%, transparent);
+  border-radius: 10px 10px 0 0;
+}
+.node-type > span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  gap: 8px;
+}
+.node-type > span > svg {
+  width: 23px;
+  height: 23px;
+  padding: 4px;
+  background: color-mix(in srgb, var(--node-accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--node-accent) 35%, transparent);
+  border-radius: 5px;
+}
+.node-label {
+  font-size: 13px;
+  font-weight: 550;
+  color: #e0eafb;
+}
+.node-caption {
+  font-size: 9px;
+  color: #7b94b8;
+  margin-top: 5px;
+}
+.node-glyph {
+  color: #637492;
+}
+.react-flow__handle {
+  width: 9px !important;
+  height: 9px !important;
+  background: var(--node-accent) !important;
+  border: 2px solid #17273e !important;
+}
+.branch-label {
+  font-size: 8px;
+  color: #d4af53;
+  bottom: -18px;
+  right: 3px;
+}
+.core-node.node-invalid {
+  border-style: dashed;
+  border-color: #fbbf24;
+}
+.node-run-state {
+  display: block;
+  margin-top: 9px;
+  font-size: 9px;
+  color: #8adfc0;
+  text-transform: capitalize;
+}
+.execution-failed .node-run-state {
+  color: #fda4af;
+}
+.execution-waiting .node-run-state {
+  color: #fbbf24;
+}
+.react-flow__edge:hover .react-flow__edge-path,
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #b6a4ff !important;
+  stroke-width: 2.4px !important;
+}
+.react-flow__controls {
+  border: 1px solid #3b5175 !important;
+  border-radius: 8px !important;
+}
+.react-flow__controls-button {
+  width: 30px !important;
+  height: 30px !important;
+  background: #0c1b30 !important;
+  border-color: #293f5f !important;
+  fill: #99b4df !important;
+}
+.react-flow__minimap {
+  background: #0b1829 !important;
+  border-color: #314d75;
+  width: 145px !important;
+  height: 95px !important;
+}
+.react-flow__attribution {
+  background: #0a1424 !important;
+  font-size: 8px !important;
+  color: #547197 !important;
+}
+.builder-feedback,
+.execution-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 23px;
+  background: #18284a;
+  color: #bdcfea;
+  font-size: 12px;
+  border-bottom: 1px solid #385079;
+}
+.builder-feedback > button {
+  margin-left: auto;
+  font-size: 11px;
+  color: #93b9fa;
+}
+.execution-strip {
+  background: #0b2430;
+  color: #8fcbd6;
+}
+.execution-strip > span:not(.status-badge) {
+  font-size: 11px;
+  color: #5d94a3;
+}
+.execution-strip > a {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a5d8fc;
+  font-size: 11px;
+}
+.mobile-builder-note,
+.mobile-node-list {
+  display: none;
+}
+.app-shell:has(.builder-page) .sidebar {
+  width: 76px;
+  padding: 24px 12px;
+}
+.app-shell:has(.builder-page) .main-shell {
+  margin-left: 76px;
+}
+.app-shell:has(.builder-page) .brand {
+  font-size: 0;
+  justify-content: center;
+  gap: 0;
+}
+.app-shell:has(.builder-page) .brand-ai,
+.app-shell:has(.builder-page) .workspace,
+.app-shell:has(.builder-page) .side-note,
+.app-shell:has(.builder-page) .nav-label,
+.app-shell:has(.builder-page) .user-profile > span:nth-child(2),
+.app-shell:has(.builder-page) .user-profile > svg,
+.app-shell:has(.builder-page) .nav-dot {
+  display: none;
+}
+.app-shell:has(.builder-page) nav {
+  margin-top: 34px;
+}
+.app-shell:has(.builder-page) .nav-item {
+  font-size: 0;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+}
+.app-shell:has(.builder-page) .user-profile {
+  justify-content: center;
+}
+.app-shell:has(.builder-page) .topbar {
+  height: 58px;
+}
+.app-shell:has(.builder-page) .builder-page {
+  height: calc(100svh - 58px);
+}
+.app-shell:has(.builder-page) footer {
+  display: none;
+}
